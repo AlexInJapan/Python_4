@@ -20,3 +20,4 @@ else:
     print(f"支給額:{sikyuugaku}、税額:{zeigaku}",end="")
 
 
+
