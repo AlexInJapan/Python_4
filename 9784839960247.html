@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="ja"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="ja"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="ja"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js gt-ie9" lang="ja"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script>
+            localStorage.removeItem('user_id');
+        window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+                    'not_login': true
+            });
+</script>
+
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '985710958663074');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=985710958663074&amp;ev=PageView&amp;noscript=1"
+/ alt=""></noscript>
+<!-- End Facebook Pixel Code -->
+
+
+    
+<title>『実践力を身につける Pythonの教科書』サポートサイト | マイナビブックス</title>
+<meta name="description" content="『実践力を身につける Pythonの教科書』サポートサイトこのページはクジラ飛行机[著]『実践力を身につける">
+<meta name="keywords" content="">
+
+
+<meta name="robots" content="noindex">
+
+ 
+ 
+    <link rel="shortcut icon" href="/files/user/img/favicon.ico">
+ 
+<link rel="apple-touch-icon-precomposed" href="/files/user/img/MBhome.png">
+
+<link rel="stylesheet" href="/files/user/css/common/base.css">
+  
+     
+<link rel="stylesheet" href="/files/user/css/common/base.css">
+
+<link rel="stylesheet" href="/files/user/css/common/structure.css">
+<link rel="stylesheet" href="/files/user/css/common/header.css">
+<link rel="stylesheet" href="/files/user/css/common/footer.css">
+<link rel="stylesheet" href="/files/user/css/common/component.css">
+<link rel="stylesheet" href="/files/user/css/uniq/free_html.css">
+
+
+<link rel="stylesheet" href="/files/css/front/customize.css" />
+<script src="//www.google.com/jsapi"></script>
+<script type="text/javascript" src="/files/user/js/jquery.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<!--マイページ修正時に変更-->
+<script type="text/javascript" src="/files/user/js/smoothscroll.js"></script>
+<script type="text/javascript" src="/files/user/js/fixHeight.js"></script>
+<script type="text/javascript" src="/files/user/js/jquery.carouFredSel.js"></script>
+
+<script type="text/javascript" src="/files/user/js/jquery.lightbox.js"></script>
+    <!--マイページ修正時に変更-->
+        <script type="text/javascript" src="/files/user/js/jquery.simplemodal.js"></script>
+    
+    <script type="text/javascript" src="/files/user/js/default.js"></script>
+        
+
+    
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/files/user/js/html5.js"></script>
+<script type="text/javascript" src="/files/user/js/respond.src.js"></script>
+<![endif]-->
+
+    
+
+
+<script src="/js/modules/ec/jquery.rcms-ec-cart.js" ></script>
+<script>
+function addKomma(str) {
+    var num = new String(str).replace(/,/g, "");
+    while(num != (num = num.replace(/^(-?\d+)(\d{3})/, "$1,$2")));
+    return num;
+}
+(function($){
+    
+    $(document).ready(function(){
+        $(".rcms_ec_cart_button").rcmsEcCart({
+            onlyAdd : true,
+            beforUpdate : function(elm){
+                var id = elm.data("product_id");
+                var q  = $(".item_quantity[data-product_id='"+id+"']").val();
+                elm.data("quantity",q);
+            },
+            afterUpdate : refreshCart,
+            maxExtension: 5
+        });
+        if ($("#cart_plugin_items")[0]) {
+            // cart_headerがあればカート情報を更新
+            refreshCart();
+        }
+    });
+
+    function refreshCart(res){
+        $.ajax({
+            type   : "POST",
+            async  : true,
+            url    : "/ec/cart/data_format=json",
+            contentType : 'application/x-www-form-urlencoded',
+            success: function(json){
+                if(typeof json !== "object"){
+                    var json = $.parseJSON(json);
+                }
+                $("#cart_plugin_items").html(json.html);
+                $("#cart_plugin_total_quantity").html(addKomma(json.total_quantity));
+                $("#cart_plugin_item_subtotal").html(addKomma(json.subtotal));
+            }
+        });
+    }
+
+
+})(jQuery);
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PXNBJV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PXNBJV');gtag('config', 'AW-782108303');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Event snippet for WD2018年12月号販売 conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
+<!-- End Event snippet for WD2018年12月号販売 conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
+
+
+<script>
+
+(function($){
+	$(function(){
+		$(".big_category").on("click", function() {
+			$(this).next(".small_category").slideToggle(0);
+		});
+	});
+})(jQuery);
+
+</script>
+
+
+
+<script src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+
+
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/195484292/book.reca', [300, 250],'div-gpt-ad-1495605901695-0').addService(googletag.pubads());
+    googletag.defineSlot('/195484292/book.recb', [300, 250],'div-gpt-ad-1495605901695-1').addService(googletag.pubads());
+    googletag.defineSlot('/195484292/book.tile1', [300, 100],'div-gpt-ad-1495605901695-2').addService(googletag.pubads());
+    googletag.defineSlot('/195484292/book.tile2', [300, 100], 'div-gpt-ad-1700442390809-0').addService(googletag.pubads());
+    googletag.defineSlot('/195484292/book.tile3', [300, 100], 'div-gpt-ad-1700442549141-0').addService(googletag.pubads());
+    googletag.defineSlot('/195484292/book.tile4', [300, 100],'div-gpt-ad-1495605901695-5').addService(googletag.pubads());
+    googletag.defineSlot('/195484292/book.tile5', [300, 100],'div-gpt-ad-1495605901695-6').addService(googletag.pubads());
+    googletag.defineSlot('/195484292/book.txt1', [1, 1],'div-gpt-ad-1495605901695-7').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.pubads().setTargeting('ch', ['book.ec']);
+    googletag.enableServices();
+  });
+</script>
+
+
+
+<meta name="google-site-verification" content="sEJY4UbwJiq5Zhqx5r4TE6QfvF27PoJRMKw67-jRpME" />
+
+<link rel="alternate" type="application/rss+xml" title="サポートサイト" href="https://book.mynavi.jp/files/topics/rss/group13.rdf">
+<link rel="stylesheet" href="/files/user/css/uniq/henshubu.css">
+<script src="/files/user/js/henshubu.js"></script>
+<link rel="stylesheet" href="/files/user/css/uniq/ec-supportsite.css">
+<style type="text/css"><!--
+#main_contents .pdf_area li {
+	background-position: 0 13px;
+}
+#simple #header {
+  width: auto;
+  margin: 0 9px 13px;
+}
+--></style>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(
+  ["_setAccount", "UA-44050502-2"],
+  ["_setDomainName", "none"],
+  ["_setAllowLinker", true],
+  ["_setCustomVar", 1, "topics", "60071", 3],
+  ["_setCustomVar", 3, "page_sysnm", "topics_detail13", 3],
+  ["_setCustomVar", 4, "group_id", "13", 3],
+  ["_trackPageview"]
+  );
+
+  (function() {
+    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+    ga.src = ("https:" == document.location.protocol ? "https://" : "http://") + "stats.g.doubleclick.net/dc.js";
+    var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+
+<body id="simple">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PXNBJV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+
+
+<!--[HEADER]-->
+<div id="header">
+	<p id="tagline">マイナビ出版の雑誌・書籍の紹介サイト</p>
+	<div class="logo"><a href="https://book.mynavi.jp/">マイナビBOOKS</a></div>
+	<nav>
+		<ul id="gnavi">
+			<li class="g01"><a href="https://book.mynavi.jp/ec/"><span>ショッピング</span></a></li>
+			<li class="g02"><a href="https://book.mynavi.jp/official/"><span>関連サイト</span></a><li>
+			<li class="g05"><a href="https://book.mynavi.jp/henshubu/"><span>編集部ブログ</span></a></li>
+		</ul>
+	</nav>
+            <div class="t_point_bunner">
+            <a href="https://book.mynavi.jp/point/about/"><img src="/files/user/img/tp/tamaru.png" width="100%" alt=""></a>
+    </div>
+    
+	<div id="ecnavi"> 
+		<!-- search_category -->
+				<div id="search_category">
+			<p class="btn">商品カテゴリーから探す</p>
+			<div class="box">
+				<ul class="parent">
+					<li><span>定期購読</span></li>
+					<li><span>書籍・ムック</span></li>
+					<li><span>雑誌</span></li>
+					<li><span>ゲーム・DVD</span></li>
+					<li><span>ダウンロード素材</span></li>
+                    <li><span>ビジネステンプレート</span></li>
+                    <li><span>グッズ・雑貨</span></li>
+                    <li><span>映像・音楽</span></li>
+					<li><span>イベント</span></li>
+				</ul>
+				<!-- 定期購読 -->
+				<div class="category">
+					<p class="heading">定期購読</p>
+					<ul>
+						<li><a href="https://book.mynavi.jp/teiki/mf/">Mac Fan</a></li>
+						<li><a href="https://book.mynavi.jp/teiki/wd/">Web Designing</a></li>
+						<li><a href="https://book.mynavi.jp/teiki/sekai/">将棋世界</a></li>
+                        <li><a href="https://book.mynavi.jp/teiki/puzzle/">パズル誌</a></li>
+					</ul>
+				</div>
+				<!-- 書籍・ムック -->
+																																																																																																																																																																																																																																																																																																																																																																																																																																																															<div class="category">
+					<p class="heading">書籍・ムック</p>
+					<ul>
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=1">コンピュータ</a></li>
+																																																																																																																																																																																			<li><a href="https://book.mynavi.jp/ec/products/contents_type=133">年賀状</a></li>
+																					<li><a href="https://book.mynavi.jp/ec/products/contents_type=137">将棋</a></li>
+																									<li><a href="https://book.mynavi.jp/ec/products/contents_type=145">囲碁</a></li>
+																															<li><a href="https://book.mynavi.jp/ec/products/contents_type=156">麻雀・競馬</a></li>
+											<li><a href="https://book.mynavi.jp/ec/products/contents_type=157">新書</a></li>
+											<li><a href="https://book.mynavi.jp/ec/products/contents_type=158">ビジネス</a></li>
+																			<li><a href="https://book.mynavi.jp/ec/products/contents_type=163">料理</a></li>
+																											<li><a href="https://book.mynavi.jp/ec/products/contents_type=172">美容・ダイエット・ファッション</a></li>
+																					<li><a href="https://book.mynavi.jp/ec/products/contents_type=178">暮らし・子育て</a></li>
+																																													<li><a href="https://book.mynavi.jp/ec/products/contents_type=196">カメラ・写真</a></li>
+							</ul>
+					<ul class="second">
+																				<li><a href="https://book.mynavi.jp/ec/products/contents_type=201">地図・ガイド</a></li>
+																																					<li><a href="https://book.mynavi.jp/ec/products/contents_type=215">就職/転職</a></li>
+															<li><a href="https://book.mynavi.jp/ec/products/contents_type=218">スポーツ</a></li>
+																																	<li><a href="https://book.mynavi.jp/ec/products/contents_type=230">健康・医学</a></li>
+															<li><a href="https://book.mynavi.jp/ec/products/contents_type=233">趣味・教養・学習</a></li>
+																																											<li><a href="https://book.mynavi.jp/ec/products/contents_type=248">文芸・芸術</a></li>
+																									<li><a href="https://book.mynavi.jp/ec/products/contents_type=1352">文庫</a></li>
+																			<li><a href="https://book.mynavi.jp/ec/products/contents_type=531">コミック</a></li>
+											<li><a href="https://book.mynavi.jp/ec/products/contents_type=255">その他</a></li>
+											<li><a href="https://book.mynavi.jp/ec/products/contents_type=2618">ムック</a></li>
+																																																																																																																																																																																																																																																																																																																																							</ul>
+				</div>
+				<!-- 雑誌 -->
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															<div class="category">
+					<p class="heading">雑誌</p>
+					<ul>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=2">Mac Fan</a></li>
+            							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=28">Web Designing</a></li>
+            							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=29">将棋世界</a></li>
+            							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=30">週刊将棋</a></li>
+            							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=31">+DESIGNING</a></li>
+            							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=335">クロスワードキング</a></li>
+            							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=339">漢字道</a></li>
+            							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=332">季節の漢字道</a></li>
+            							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=350">ナンクロキング</a></li>
+            							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=337">アロークロス</a></li>
+            							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=331">アロー＆スケルトンキング</a></li>
+            							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=334">まちがいさがしキング</a></li>
+            							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=333">点つなぎキング</a></li>
+            									</ul>
+					<ul class="second">
+								                        							                        							                        							                        							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=2488">PEAKS</a></li>
+            							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=2489">BiCYCLE CLUB</a></li>
+            							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=2490">EVEN</a></li>
+            							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=2491">NALU</a></li>
+            							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=2492">SALT WORLD</a></li>
+            							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=2493">Yogini</a></li>
+            							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=2494">ランドネ</a></li>
+            							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=2495">flick!</a></li>
+            							                        
+									<li><a href="https://book.mynavi.jp/ec/products/contents_type=2733">詰将棋パラダイス</a></li>
+            																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								</ul>
+				</div>
+                <!-- ゲーム -->
+				<div class="category">
+					<p class="heading">ゲーム・DVD</p>
+					<ul>
+																																																																																																																																																																																																																																																													<li><a href="https://book.mynavi.jp/ec/products/contents_type=3">将棋</a></li>
+															<li><a href="https://book.mynavi.jp/ec/products/contents_type=35">囲碁</a></li>
+															<li><a href="https://book.mynavi.jp/ec/products/contents_type=37">麻雀</a></li>
+															<li><a href="https://book.mynavi.jp/ec/products/contents_type=38">その他</a></li>
+															<li><a href="https://book.mynavi.jp/ec/products/contents_type=279">DVD</a></li>
+																																																																																																											</ul>
+				</div>
+                <!-- ダウンロード素材 -->
+				<div class="category">
+					<p class="heading">ダウンロード素材</p>
+					<ul>
+																																																																																																																																																																																																																																																																																																<li><a href="https://book.mynavi.jp/ec/products/contents_type=637">年賀状素材</a></li>
+																			<li><a href="https://book.mynavi.jp/ec/products/contents_type=1235">地図データ</a></li>
+																																																																																												</ul>
+				</div>
+                <!-- ビジネステンプレート -->
+				<div class="category">
+					<p class="heading">ビジネステンプレート</p>
+					<ul>
+																																																																																																																																																																																																																																																																																																																																																																																											<li><a href="https://book.mynavi.jp/ec/products/contents_type=941">Word</a></li>
+								<li><a href="https://book.mynavi.jp/ec/products/contents_type=942">Excel</a></li>
+								<li><a href="https://book.mynavi.jp/ec/products/contents_type=943">PowerPoint</a></li>
+								<li><a href="https://book.mynavi.jp/ec/products/contents_type=805">写真</a></li>
+										</ul>
+				</div>
+                <!-- グッズ・雑貨 -->
+				<div class="category">
+					<p class="heading">グッズ・雑貨</p>
+					<ul>
+																																																																																																																																																																																																																																																																																																																																																																																										<li><a href="https://book.mynavi.jp/ec/products/contents_type=938">ガジェット</a></li>
+														</ul>
+				</div>
+                <!-- 映像・音楽 -->
+				<div class="category">
+					<p class="heading">映像・音楽</p>
+					<ul>
+																																																																																																																																																																																																																																																																																																																																																																																															<li><a href="https://book.mynavi.jp/ec/products/contents_type=939">動画素材</a></li>
+								<li><a href="https://book.mynavi.jp/ec/products/contents_type=523">プロジェクションマッピング素材</a></li>
+								<li><a href="https://book.mynavi.jp/ec/products/contents_type=940">ハイレゾオーディオ</a></li>
+								<li><a href="https://book.mynavi.jp/ec/products/contents_type=1320">音声データ</a></li>
+						</ul>
+				</div>
+				<!-- イベント -->
+				<div class="category">
+					<p class="heading">イベント</p>
+					<!-- <ul>
+																																																																																																																																																																																																																																																																																														<li><a href="https://book.mynavi.jp/ec/products/contents_type=5">セミナー</a></li>
+								<li><a href="https://book.mynavi.jp/ec/products/contents_type=39">その他</a></li>
+																																																																																																									</ul> -->
+                    <ul>
+						<li><a href="https://book.mynavi.jp/event">イベント・セミナー</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- /search_category -->
+		<!-- search_keyword -->
+		<div id="search_keyword">
+			<div class="box">
+				<form action="https://book.mynavi.jp/ec/products/" method="get">
+										<div class="category">
+						<span>
+													</span></div>
+					<select name="topics_group_id" class="category_select">
+						<option value="" >すべて</option>
+												<option value="1" >書籍・ムック</option>
+						<option value="2" >雑誌</option>
+						<option value="3" >ゲーム・DVD</option>
+						<option value="11">ダウンロード素材</option>
+                        <option value="56" >ビジネステンプレート</option>
+                        <option value="29" >グッズ・雑貨</option>
+                        <option value="57" >映像・音楽</option>
+											</select>
+					<input type="text" name="topics_keyword" class="keyword" value=""> <input type="submit" class="submit" value="検索">
+				</form>
+			</div>
+		</div>
+        		<!-- /search_keyword --> 
+		<!-- mypage_header -->
+		<div id="mypage_header" class="logout">
+			<div class="btn">
+				<dl>
+					<dt>マイページ</dt>
+					<dd class="name">こんにちは、ゲスト 様</dd>
+					<dd><a href="https://book.mynavi.jp/login/?Retrun_URL=/">ログイン</a>、もしくは<a href="https://book.mynavi.jp/register/">会員登録</a></dd>
+				</dl>
+			</div>
+			<div class="box">
+				<ul class="regist">
+					<li><a href="https://book.mynavi.jp/login/?Retrun_URL=/"><img src="/files/user/img/common/header_btn_login.gif" width="120" height="25" alt="ログイン"></a></li>
+                    <li><a href="https://book.mynavi.jp/register/"><img src="/files/user/img/common/header_btn_regist.gif" width="120" height="25" alt="無料会員登録"></a></li>
+				</ul>
+				<ul class="mypagelist">
+					<li><a href="https://book.mynavi.jp/mypage/favorite/">お気に入り一覧</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- /mypage_header --> 
+		<!-- cart_header -->
+		<div id="cart_header">
+		<a href="https://book.mynavi.jp/ec/cart/" class="btn">
+			<dl>
+				<dt>カート</dt>
+				<dd><span id="cart_plugin_total_quantity"></span>点</dd>
+				<dd><span id="cart_plugin_item_subtotal"></span>円</dd>
+			</dl>
+			</a>
+			<div class="box">
+				<div id="cart_plugin_items">
+				</div>
+				<div class="cartbtn"><a href="https://book.mynavi.jp/ec/cart/"><img src="/files/user/img/common/header_btn_cart.png" width="260" height="42" alt="カートを見る"></a></div>
+			</div>
+		</div>
+		<!-- /cart_header --> 
+	</div>
+</div>
+<!--/[HEADER]-->
+
+
+
+<!--[TOPICPATH]-->
+     
+<nav><p id="topicpath">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        『実践力を身につける Pythonの教科書』サポートサイト
+</p></nav>
+
+<!--/[TOPICPATH]--> 
+
+<!--[CONTAINER]-->
+<div id="container" class="column1">
+	<!--[MAIN]-->
+	<div id="main">
+		<article id="contents"> 
+			<!--[CONTENTS]-->
+			
+			<!--/supportsite/detail/9784839960247.html-->
+<!--/supportsite/detail/9784839960247.html-->
+<div id="container" class="column1">
+<article id="contents"><!--[CONTENTS]-->
+<section>
+<h1 class="htype05">『実践力を身につける Pythonの教科書』サポートサイト</h1>
+
+<div class="target_item">
+<div class="image"><a rel="noopener" href="https://book.mynavi.jp/files/user/support/9784839960247/59972_ext_06_0.jpg" target="_blank"><img src="/files/user/support/9784839960247/59972_ext_06_0.jpg" style="height: 386px; width: 300px;" alt=""></a></div>
+
+<div class="detail">
+<p class="lead">このページはクジラ飛行机[著]『実践力を身につける Pythonの教科書（ISBN978-4-8399-6024-7）』のサポートページです。</p>
+
+<p><a href="https://book.mynavi.jp/ec/products/detail/id=59972">書籍詳細ページへ</a></p>
+</div>
+</div>
+</section>
+
+<section>
+<h2 class="htype07">ダウンロードデータ</h2>
+
+<p style="color: rgb(0, 0, 0); font-family: メイリオ; line-height: normal;">本書で解説しているサンプルデータをダウンロードできます。<br>
+<br>
+<a href="https://book.mynavi.jp/files/user/support/9784839960247/python_sample.zip">python_sample.zip</a><br>
+<br>
+・ダウンロードデータ内の「お読みください.txt」を必ずお読みください。<br>
+・本書に記載されている内容や本ダウンロードデータの運用によって、いかなる損害が生じても、株式会社マイナビ出版および著者は責任を負いかねますので、あらかじめご了承ください。<br>
+・ダウンロードデータに含まれるデータやプログラム、ファイルはすべて著作物であり、著作権はそれぞれの著作者にあります。本書購入者が学習用として個人で閲覧する以外の使用は認められませんので、ご注意ください。営利使用・個人使用にかかわらず、データの複製や再配布を禁じます。</p>
+&nbsp;
+
+<h2 class="htype07">訂正情報</h2>
+
+<p>・P.036 「使うことのできない名前」の一覧（9刷にて修正）<br>
+（誤）「importpass」<br>
+（正）「import pass」（1つずつ別の名前です）<br>
+<br>
+&nbsp;</p>
+
+<p>・P.065 2つ目の「REPL」の囲み、下から2行目（14刷にて修正）<br>
+（誤）(a % 10 == 0) or (b % 4 == 0)<br>
+（正）(a % 10 == 0) or (a % 4 == 0)<br>
+<br>
+<br>
+・P.071 「テキストエディタ」の囲み5行目（9刷にて修正）<br>
+（誤）「energy -= 1;」<br>
+（正）「energy -= 1」（最後のセミコロンは不要）<br>
+<br>
+<br>
+<br>
+・P.094&nbsp;1つ目の「テキストエディタ」の4行目、「テキストエディタ」の囲みの下1行目、「コマンドライン」の下3行目（3刷にて修正）<br>
+（誤）「30点以下&hellip;」<br>
+（正）「30点<strong><span style="color:#c0392b;">未満</span></strong>&hellip;」<br>
+<br>
+<br>
+・P.107&nbsp;「コマンドライン」の囲みの下4行目（3刷にて修正）<br>
+（誤）「&hellip;(redords.items())で取り出し&hellip;」<br>
+（正）「&hellip;(re<strong><span style="color:#c0392b;">c</span></strong>ords.items())で取り出し&hellip;」（3文字目はdではなくcでした）<br>
+<br>
+<br>
+・P.113&nbsp;「［書式］文字列の分割」の囲みの下2行目（13刷にて修正）<br>
+（誤）「&hellip;省略するとすべての区切り文字で区切ります。」<br>
+（正）「&hellip;値を指定しないか「-1」を指定すると、すべての区切り文字で区切ります。」<br>
+<br>
+<br>
+・P.126 「テキストエディタ」の囲み8行目（10刷にて修正予定）<br>
+（誤）「base == 0.91 * 1.82」<br>
+（正）「base =&nbsp;0.91 * 1.82」（イコールは1つ）<br>
+<br>
+<br>
+・P.129 「テキストエディタ」の囲み8行目（9刷にて修正）<br>
+（誤）「changeValue();」<br>
+（正）「changeValue()」（最後のセミコロンは不要）<br>
+<br>
+<br>
+・P.130 「テキストエディタ」の囲み10行目（9刷にて修正）<br>
+（誤）「changeValue();」<br>
+（正）「changeValue()」（最後のセミコロンは不要）<br>
+<br>
+<br>
+・P.138&nbsp;見出し「タプルのリストをソートする」の2行前（8刷にて修正）<br>
+（誤）「&hellip;TrueかFlaseを指定します。」<br>
+（正）「&hellip;TrueかF<strong><span style="color:#c0392b;">al</span></strong>seを指定します。」（aとlが逆でした）<br>
+<br>
+<br>
+・P.145 前のページから続く「テキストエディタ」の囲み8行目（9刷にて修正）<br>
+（誤）「it = gen1to3();」<br>
+（正）「it = gen1to3()」（最後のセミコロンは不要）<br>
+<br>
+<br>
+・P.157　1つ目の「テキストエディタ」の囲み2行前（9刷にて修正）<br>
+（誤）「import syaku;」<br>
+（正）「import syaku」（最後のセミコロンは不要）<br>
+<br>
+<br>
+・P.164 ページ上部の表 「書式」列の下から4つ目（9刷にて修正）<br>
+（誤）「%l」<br>
+（正）「%<strong><span style="color:#c0392b;">I</span></strong>」（大文字のエルではなく大文字のアイ）<br>
+<br>
+<br>
+・P.176 1つ目のテキストエディタ1行目（9刷にて修正）<br>
+（誤）「a_file = open(&quot;test.txt&quot;, mode=&quot;w&quot;)」<br>
+（正）「a_file = open(&quot;test.txt&quot;, mode=&quot;w&quot;<span style="color:#c0392b;"><strong>, encoding=&quot;utf-8&quot;</strong></span>)」（encodingを追加。現状のままでも動きます）<br>
+<br>
+<br>
+・P.176 2つ目のテキストエディタ1行目（9刷にて修正）<br>
+（誤）「with open(&quot;test.txt&quot;, mode=&quot;w&quot;) as f:」<br>
+（正）「with open(&quot;test.txt&quot;, mode=&quot;w&quot;<span style="color:#c0392b;"><strong>, encoding=&quot;utf-8&quot;</strong></span>) as f:」（encodingを追加。現状のままでも動きます）<br>
+<br>
+・P.181 見出し「複数ファイル横断テキスト検索ツールを作ってみよう」の1行前（2刷にて修正）<br>
+（誤）「これで、sys.argsの動作が分かりました」<br>
+（正）「これで、sys.arg<strong><span style="color:#c0392b;">v</span></strong>の動作が分かりました」（最後はsではなくg）<br>
+<br>
+<br>
+・P.216 テキストエディタ10行目（10刷にて修正）<br>
+（誤）「print(&quot;&lt;html&gt;&lt;head&gt;&lt;meta charset=&#39;utf-8&#39;&gt;&lt;body&gt;&quot;)」<br>
+（正）「print(&quot;&lt;html&gt;&lt;head&gt;&lt;meta charset=&#39;utf-8&#39;&gt;<strong><span style="color:#c0392b;">&lt;/head&gt;</span></strong>&lt;body&gt;&quot;)」（head要素の閉じタグを追加）</p>
+<br>
+・P.232 「● ANACONDA &gt; DOWNLOAD」の本文（9刷にて修正）<br>
+インストールの途中で、「Add Anaconda to my PATH enviroment variable」と「Register Anaconda as mydefault Python 3.x」のチェックボックスがありますが、両方にチェックを入れて進めてください。<br>
+※Anacondaをインストールする際、パスの競合が起きる恐れがあるため、本家のPythonを先にアンインストールしてから進めてください。<br>
+<br>
+<br>
+・P.236 テキストエディタ1行目と7-8行目（13刷にて修正）<br>
+＜1行目＞<br>
+<span style="font-size:110%;">（誤）「from sklearn import datasets, cross_validation, svm, metrics」<br>
+（正）「<span style="color:#c0392b;">from sklearn import datasets, svm, metrics<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;from sklearn.model_selection import train_test_split</span>」</span><br>
+<br>
+＜7-8行目＞<br>
+<span style="font-size:110%;">（誤）「data_train, data_test, label_train, label_test = \<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cross_validation.train_test_split(digits.data, digits.target)」<br>
+（正）「data_train, data_test, label_train, label_test = \<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color:#c0392b;">train_test_split(digits.data, digits.target</span>)」</span><br>
+<br>
+<br>
+・P.243 テキストエディタ1行目と28-29行目、32行目（13刷にて修正）<br>
+＜1行目＞<br>
+<span style="font-size:110%;">（誤）「from sklearn import cross_validation, svm, metrics」<br>
+（正）「<span style="color:#c0392b;">from sklearn import datasets, svm, metrics<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;from sklearn.model_selection import train_test_split</span>」</span><br>
+<br>
+＜28-29行目＞<br>
+<span style="font-size:110%;">（誤）「data_train, data_test, label_train, label_test = \<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cross_validation.train_test_split(data, labels)」<br>
+（正）「data_train, data_test, label_train, label_test = <span style="color:#c0392b;">train_test_split(data, labels)</span>」</span><br>
+<br>
+＜32行目＞<br>
+<span style="font-size:110%;">（誤）「clf = svm.SVC()」<br>
+（正）「clf = svm.SVC(<span style="color:#c0392b;">gamma=&quot;auto&quot;</span>)」</span><br>
+<br>
+<br>
+・P.245 テキストエディタ1つ目の4行目（13刷にて修正）<br>
+<span style="font-size:110%;">（誤）「clf = RandomForestClassifier()」<br>
+（正）「clf = RandomForestClassifier(<span style="color:#c0392b;">n_estimators=10</span>)」</span><br>
+&nbsp;
+<p>・P.268 一番下のテキストエディタの囲み、5行目（14刷にて修正）<br>
+（誤）class AB:<br>
+（正）class AB(A):<br>
+<br>
+&nbsp;</p>
+
+<p>・P.269 一番上のテキストエディタの囲み、行番号で9行目（14刷にて修正）<br>
+（誤）class AC:<br>
+（正）class AC(A):<br>
+<br>
+<br>
+&nbsp;</p>
+
+<p>不備がありまして誠に申し訳ございませんでした。お詫びの上、訂正いたします。</p>
+<br>
+<br>
+&nbsp;</section>
+</article>
+
+<div id="selenium-highlight">&nbsp;</div>
+
+</div>
+
+			
+			
+			
+			
+			
+			<!--/[CONTENTS]--> 
+		</article>
+	</div>
+	<!--/[MAIN]--> 
+</div>
+<!--/[CONTAINER]--> 
+
+
+
+<!--[FOOTER]-->
+<div id="footer">
+	<div class="footer_link">
+		<dl class="footer_dl">
+			<dt><a href="https://book.mynavi.jp/"><img src="/files/user/img/common/footer_logo.gif" alt="マイナビBOOKS" width="160" height="24"></a></dt>
+			<dd>
+				<ul>
+					<li><a href="https://book.mynavi.jp/ec/">ショッピング</a></li>
+					<li><a href="https://book.mynavi.jp/official/">関連サイト</a></li>
+					<li><a href="https://book.mynavi.jp/henshubu/">編集部ブログ</a></li>
+									</ul>
+			</dd>
+		</dl>
+		<ul class="footer_ul">
+			<li><a href="http://pub.mynavi.jp/">マイナビ出版</a>｜</li>
+			<li><a href="https://book.mynavi.jp/kiyaku/">利用規約</a>｜</li>
+			<li><a href="https://book.mynavi.jp/online/">オンライン販売について</a>｜</li>
+			<li><a href="https://book.mynavi.jp/legal/">特定商取引法に関する記載</a>｜</li>
+			<li><a href="https://book.mynavi.jp/copyrightedmaterial_guideline/">ゲームソフトの利用に関するガイドライン</a>｜</li>
+            <li><a href="https://book.mynavi.jp/privacy/">個人情報について</a>｜</li>
+            <li><a href="https://book.mynavi.jp/howto/">このサイトの使い方</a>｜</li>
+			<li><a href="https://book.mynavi.jp/mypage/mailmaga/">メールマガジン</a>｜</li>
+            <li><a href="http://pub.mynavi.jp/ad/" target=”_blank”>広告出稿について</a>｜</li>
+            <li><a href="https://book.mynavi.jp/faq/">よくあるご質問</a>｜</li>
+            <li><a href="https://book.mynavi.jp/inquiry_list/">お問い合わせ</a>｜</li>
+            <li><a href="https://book.mynavi.jp/purchase_en/">PURCHASE GUIDE (ENGLISH)</a>｜</li>
+		</ul>
+		<div><a href="#header"><img src="/files/user/img/common/footer_pagetop.jpg" alt="ページトップ" width="74" height="60"></a></div>
+	</div>
+		<div id="socialbutton">
+		<ul>
+						<li class="twitter"><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>
+			<li class="facebook"><div class="fb-share-button" data-href="https://book.mynavi.jp/supportsite/detail/9784839960247.html" data-type="button_count"></div></li>
+						<li class="hatena"><a href="//b.hatena.ne.jp/entry/https://book.mynavi.jp/supportsite/detail/9784839960247.html" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.hatena.ne.jp/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.hatena.ne.jp/js/bookmark_button.js" charset="utf-8" async="async"></script></li>
+		</ul>
+	</div>
+</div>
+<!--/[FOOTER]-->
+
+<div id="fb-root"></div>
+<script>
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+</script>
+
+
+<script type="text/javascript" src="/js/gaaddons/gaaddons.js?v=1527740803"></script>
+
+</body>
+</html>
